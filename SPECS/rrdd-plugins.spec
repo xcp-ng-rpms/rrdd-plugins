@@ -1,12 +1,12 @@
 Name:           rrdd-plugins
-Version:        1.1.7
-Release:        4%{?dist}
+Version:        1.2.7
+Release:        8%{?dist}
 Summary:        RRDD metrics plugins
 License:        LGPL+linking exception
 Group:          System/Hypervisor
 URL:            https://github.com/xenserver/rrdd-plugins/
 Source0:        https://code.citrite.net/rest/archive/latest/projects/XSU/repos/%{name}/archive?at=v%{version}&format=tar.gz&prefix=%{name}-%{version}#/%{name}-%{version}.tar.gz
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.1.7&format=tar.gz&prefix=rrdd-plugins-1.1.7#/rrdd-plugins-1.1.7.tar.gz) = ee27c9d13726b29b4bbc11b3697df9b21e6a58f2
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.2.7&format=tar.gz&prefix=rrdd-plugins-1.2.7#/rrdd-plugins-1.2.7.tar.gz) = 179f7608f8ebd5abbe2956e46a458a5b45e43095
 Source1:        xcp-rrdd-iostat.service
 Source2:        xcp-rrdd-squeezed.service
 Source3:        xcp-rrdd-xenpm.service
@@ -77,6 +77,10 @@ rm -rf %{buildroot}
 %{_unitdir}/xcp-rrdd-xenpm.service
 
 %changelog
+* Tue May 01 2018 Christian Lindig <christian.lindig@citrix.com> - 1.2.7-1
+- CA-288281: Cache tapdisk3 pids
+- CA-288281: Use mmap/cstruct rather than read to get stats from blktap3
+
 * Thu Mar 15 2018 Christian Lindig <christian.lindig@citrix.com> - 1.1.7-1
 - CA-277850 replace xenops with ezxenstore
 
