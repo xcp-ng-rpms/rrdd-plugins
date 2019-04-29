@@ -1,15 +1,19 @@
 Name:           rrdd-plugins
-Version:        1.2.7
-Release:        8%{?dist}
+Version:        1.5.7
+Release:        1%{?dist}
 Summary:        RRDD metrics plugins
 License:        LGPL+linking exception
 Group:          System/Hypervisor
 URL:            https://github.com/xenserver/rrdd-plugins/
-Source0:        https://code.citrite.net/rest/archive/latest/projects/XSU/repos/%{name}/archive?at=v%{version}&format=tar.gz&prefix=%{name}-%{version}#/%{name}-%{version}.tar.gz
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.2.7&format=tar.gz&prefix=rrdd-plugins-1.2.7#/rrdd-plugins-1.2.7.tar.gz) = 179f7608f8ebd5abbe2956e46a458a5b45e43095
-Source1:        xcp-rrdd-iostat.service
-Source2:        xcp-rrdd-squeezed.service
-Source3:        xcp-rrdd-xenpm.service
+
+Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.5.7&format=tar.gz&prefix=rrdd-plugins-1.5.7#/rrdd-plugins-1.5.7.tar.gz
+Source1: SOURCES/rrdd-plugins/xcp-rrdd-iostat.service
+Source2: SOURCES/rrdd-plugins/xcp-rrdd-squeezed.service
+Source3: SOURCES/rrdd-plugins/xcp-rrdd-xenpm.service
+
+
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.5.7&format=tar.gz&prefix=rrdd-plugins-1.5.7#/rrdd-plugins-1.5.7.tar.gz) = ed041337a76488a3c562c5f449771e60ba50ada6
+
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 BuildRequires:  xs-opam-repo
 BuildRequires:  forkexecd-devel
@@ -77,6 +81,17 @@ rm -rf %{buildroot}
 %{_unitdir}/xcp-rrdd-xenpm.service
 
 %changelog
+* Thu Jan 17 2019 Christian Lindig <christian.lindig@citrix.com> - 1.5.7-1
+- Replaced jbuild files with dune.
+
+* Tue Dec 18 2018 Christian Lindig <christian.lindig@citrix.com> - 1.4.7-1
+- CA-302328: Ignore extra stat fields with newer kernels
+- Reduce compiler warnings
+- Update Opam and Travis configuration
+
+* Thu Oct 04 2018 Christian Lindig <christian.lindig@citrix.com> - 1.3.7-1
+- CA-297055: Make loop tail recursive
+
 * Tue May 01 2018 Christian Lindig <christian.lindig@citrix.com> - 1.2.7-1
 - CA-288281: Cache tapdisk3 pids
 - CA-288281: Use mmap/cstruct rather than read to get stats from blktap3

@@ -4,6 +4,8 @@ After=xcp-rrdd.service
 Requires=xcp-rrdd.service
 
 [Service]
+Environment="LD_PRELOAD=/usr/lib64/libjemalloc.so.1"
+Environment="MALLOC_CONF=narenas:1,tcache:false,lg_dirty_mult:22"
 ExecStart=/opt/xensource/libexec/xcp-rrdd-plugins/xcp-rrdd-iostat
 StandardOutput=null
 StandardError=null
