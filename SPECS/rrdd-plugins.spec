@@ -1,18 +1,18 @@
 Name:           rrdd-plugins
-Version:        1.5.7
-Release:        1%{?dist}
+Version:        1.6.7
+Release:        2%{?dist}
 Summary:        RRDD metrics plugins
 License:        LGPL+linking exception
 Group:          System/Hypervisor
 URL:            https://github.com/xenserver/rrdd-plugins/
 
-Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.5.7&format=tar.gz&prefix=rrdd-plugins-1.5.7#/rrdd-plugins-1.5.7.tar.gz
+Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.6.7&format=tar.gz&prefix=rrdd-plugins-1.6.7#/rrdd-plugins-1.6.7.tar.gz
 Source1: SOURCES/rrdd-plugins/xcp-rrdd-iostat.service
 Source2: SOURCES/rrdd-plugins/xcp-rrdd-squeezed.service
 Source3: SOURCES/rrdd-plugins/xcp-rrdd-xenpm.service
 
 
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.5.7&format=tar.gz&prefix=rrdd-plugins-1.5.7#/rrdd-plugins-1.5.7.tar.gz) = ed041337a76488a3c562c5f449771e60ba50ada6
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.6.7&format=tar.gz&prefix=rrdd-plugins-1.6.7#/rrdd-plugins-1.6.7.tar.gz) = 7c26e95100887084e3a58b35843b816e01957593
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 BuildRequires:  xs-opam-repo
@@ -28,6 +28,7 @@ BuildRequires:  xen-libs-devel
 %{?systemd_requires}
 BuildRequires: systemd
 
+Requires:       jemalloc
 Requires:       xsifstat
 Requires:       xsiostat
 
@@ -81,6 +82,12 @@ rm -rf %{buildroot}
 %{_unitdir}/xcp-rrdd-xenpm.service
 
 %changelog
+* Fri Aug 23 2019 Edwin Török <edvin.torok@citrix.com> - 1.6.7-2
+- bump packages after xs-opam update
+
+* Mon Jul 29 2019 Christian Lindig <christian.lindig@citrix.com> - 1.6.7-1
+- XSI-400 Try to stop xcp-rrdd-isostat filling log
+
 * Thu Jan 17 2019 Christian Lindig <christian.lindig@citrix.com> - 1.5.7-1
 - Replaced jbuild files with dune.
 
