@@ -1,24 +1,23 @@
 Name:           rrdd-plugins
-Version:        1.6.7
-Release:        2%{?dist}
+Version:        1.10.7
+Release:        1%{?dist}
 Summary:        RRDD metrics plugins
 License:        LGPL+linking exception
 Group:          System/Hypervisor
 URL:            https://github.com/xenserver/rrdd-plugins/
 
-Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.6.7&format=tar.gz&prefix=rrdd-plugins-1.6.7#/rrdd-plugins-1.6.7.tar.gz
+Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.10.7&format=tar.gz&prefix=rrdd-plugins-1.10.7#/rrdd-plugins-1.10.7.tar.gz
 Source1: SOURCES/rrdd-plugins/xcp-rrdd-iostat.service
 Source2: SOURCES/rrdd-plugins/xcp-rrdd-squeezed.service
 Source3: SOURCES/rrdd-plugins/xcp-rrdd-xenpm.service
 
 
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.6.7&format=tar.gz&prefix=rrdd-plugins-1.6.7#/rrdd-plugins-1.6.7.tar.gz) = 7c26e95100887084e3a58b35843b816e01957593
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.10.7&format=tar.gz&prefix=rrdd-plugins-1.10.7#/rrdd-plugins-1.10.7.tar.gz) = 17a36d125ab1cb8e9ccb57946e12680c76d5a641
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 BuildRequires:  xs-opam-repo
 BuildRequires:  forkexecd-devel
 BuildRequires:  ocaml-xcp-idl-devel
-BuildRequires:  ocaml-xenops-devel
 BuildRequires:  ocaml-rrdd-plugin-devel
 BuildRequires:  ocaml-xen-api-libs-transitional-devel
 BuildRequires:  xen-ocaml-devel
@@ -82,6 +81,24 @@ rm -rf %{buildroot}
 %{_unitdir}/xcp-rrdd-xenpm.service
 
 %changelog
+* Fri May 29 2020 Christian Lindig <christian.lindig@citrix.com> - 1.10.7-1
+- CA-335964: Do not expose temporary VM UUIDs
+- travis: follow validation suggestions
+
+* Tue May 19 2020 Christian Lindig <christian.lindig@citrix.com> - 1.9.7-1
+- CA-339269 Average I/O latency in microseconds
+
+* Mon Apr 06 2020 Christian Lindig <christian.lindig@citrix.com> - 1.8.7-1
+- CA-336067 take average since last blktap reading
+
+* Tue Jan 28 2020 Christian Lindig <christian.lindig@citrix.com> - 1.7.7-1
+- CA-144246 prevent log spam when intellicache enabled
+- maintenance: fix compiler warnings
+- maintenance: update .travis.yml
+
+* Wed Dec 11 2019 Pau Ruiz Safont <pau.safont@citrix.com> - 1.6.7-3
+- Display rrdd-xenpm service as xenpm in logs.
+
 * Fri Aug 23 2019 Edwin Török <edvin.torok@citrix.com> - 1.6.7-2
 - bump packages after xs-opam update
 
