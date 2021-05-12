@@ -1,18 +1,18 @@
 Name:           rrdd-plugins
-Version:        1.10.7
+Version:        1.10.8
 Release:        1%{?dist}
 Summary:        RRDD metrics plugins
 License:        LGPL+linking exception
 Group:          System/Hypervisor
 URL:            https://github.com/xenserver/rrdd-plugins/
 
-Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.10.7&format=tar.gz&prefix=rrdd-plugins-1.10.7#/rrdd-plugins-1.10.7.tar.gz
+Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.10.8&format=tar.gz&prefix=rrdd-plugins-1.10.8#/rrdd-plugins-1.10.8.tar.gz
 Source1: SOURCES/rrdd-plugins/xcp-rrdd-iostat.service
 Source2: SOURCES/rrdd-plugins/xcp-rrdd-squeezed.service
 Source3: SOURCES/rrdd-plugins/xcp-rrdd-xenpm.service
 
 
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.10.7&format=tar.gz&prefix=rrdd-plugins-1.10.7#/rrdd-plugins-1.10.7.tar.gz) = 17a36d125ab1cb8e9ccb57946e12680c76d5a641
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.10.8&format=tar.gz&prefix=rrdd-plugins-1.10.8#/rrdd-plugins-1.10.8.tar.gz) = 082f0a031f7d299167ae0060a58f45694b826005
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 BuildRequires:  xs-opam-repo
@@ -81,6 +81,9 @@ rm -rf %{buildroot}
 %{_unitdir}/xcp-rrdd-xenpm.service
 
 %changelog
+* Thu Feb 11 2021 Ben Anson <ben.anson@citrix.com> - 1.10.8-1
+- CA-336067 Per SR latency values are wrong
+
 * Fri May 29 2020 Christian Lindig <christian.lindig@citrix.com> - 1.10.7-1
 - CA-335964: Do not expose temporary VM UUIDs
 - travis: follow validation suggestions
