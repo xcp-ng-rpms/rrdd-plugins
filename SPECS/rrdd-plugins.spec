@@ -1,6 +1,6 @@
 Name:           rrdd-plugins
 Version:        1.10.8
-Release:        1%{?dist}
+Release:        1.1%{?dist}
 Summary:        RRDD metrics plugins
 License:        LGPL+linking exception
 Group:          System/Hypervisor
@@ -30,6 +30,8 @@ BuildRequires: systemd
 Requires:       jemalloc
 Requires:       xsifstat
 Requires:       xsiostat
+
+Patch1001: 0001-rrdp-iostat-use-scanf-instead-of-Str.regexp.patch
 
 %description
 This package contains plugins registering to the RRD daemon and exposing
@@ -81,6 +83,9 @@ rm -rf %{buildroot}
 %{_unitdir}/xcp-rrdd-xenpm.service
 
 %changelog
+* Thu May 27 2021 Ronan Abhamon <ronan.abhamon@vates.fr> - 1.10.8-1.1
+- Add 0001-rrdp-iostat-use-scanf-instead-of-Str.patch patch
+
 * Thu Feb 11 2021 Ben Anson <ben.anson@citrix.com> - 1.10.8-1
 - CA-336067 Per SR latency values are wrong
 
