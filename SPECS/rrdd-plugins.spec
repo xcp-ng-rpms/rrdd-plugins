@@ -6,13 +6,13 @@ License:        LGPL+linking exception
 Group:          System/Hypervisor
 URL:            https://github.com/xenserver/rrdd-plugins/
 
-Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.10.7&format=tar.gz&prefix=rrdd-plugins-1.10.7#/rrdd-plugins-1.10.7.tar.gz
+Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.10.8&format=tar.gz&prefix=rrdd-plugins-1.10.8#/rrdd-plugins-1.10.8.tar.gz
 Source1: SOURCES/rrdd-plugins/xcp-rrdd-iostat.service
 Source2: SOURCES/rrdd-plugins/xcp-rrdd-squeezed.service
 Source3: SOURCES/rrdd-plugins/xcp-rrdd-xenpm.service
 
 
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.10.7&format=tar.gz&prefix=rrdd-plugins-1.10.7#/rrdd-plugins-1.10.7.tar.gz) = 17a36d125ab1cb8e9ccb57946e12680c76d5a641
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.10.8&format=tar.gz&prefix=rrdd-plugins-1.10.8#/rrdd-plugins-1.10.8.tar.gz) = 3c58b59a8e6a98d8ac46868b72ed3b12
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 BuildRequires:  xs-opam-repo
