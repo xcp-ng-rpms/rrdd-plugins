@@ -1,5 +1,5 @@
 Name:           rrdd-plugins
-Version:        1.10.7
+Version:        1.10.8
 Release:        1%{?dist}
 Summary:        RRDD metrics plugins
 License:        LGPL+linking exception
@@ -81,6 +81,9 @@ rm -rf %{buildroot}
 %{_unitdir}/xcp-rrdd-xenpm.service
 
 %changelog
+* Tue Jun 01 2021 Ronan Abhamon <ronan.abhamon@vates.fr> - 1.10.8-1
+- Ignore tapdisk flag
+
 * Fri May 29 2020 Christian Lindig <christian.lindig@citrix.com> - 1.10.7-1
 - CA-335964: Do not expose temporary VM UUIDs
 - travis: follow validation suggestions
