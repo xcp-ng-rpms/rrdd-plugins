@@ -1,6 +1,6 @@
 Name:           rrdd-plugins
 Version:        1.10.8
-Release:        1%{?dist}
+Release:        5%{?dist}
 Summary:        RRDD metrics plugins
 License:        LGPL+linking exception
 Group:          System/Hypervisor
@@ -27,6 +27,7 @@ BuildRequires:  xen-libs-devel
 %{?systemd_requires}
 BuildRequires: systemd
 
+Requires:       libev
 Requires:       jemalloc
 Requires:       xsifstat
 Requires:       xsiostat
@@ -81,6 +82,18 @@ rm -rf %{buildroot}
 %{_unitdir}/xcp-rrdd-xenpm.service
 
 %changelog
+* Mon Sep 27 2021 Pau Ruiz Safont <pau.safont@citrix.com> - 1.10.8-5
+- Bump package for libev dependency
+
+* Mon Sep 27 2021 Pau Ruiz Safont <pau.safont@citrix.com> - 1.10.8-4
+- Bump package after xs-opam update
+
+* Mon Sep 27 2021 Pau Ruiz Safont <pau.safont@citrix.com> - 1.10.8-3
+- Bump packages after ocaml-xen-api-libs-transitional update
+
+* Tue Jul 13 2021 Edwin Török <edvin.torok@citrix.com> - 1.10.8-2
+- bump packages after xs-opam update
+
 * Thu Feb 11 2021 Ben Anson <ben.anson@citrix.com> - 1.10.8-1
 - CA-336067 Per SR latency values are wrong
 
