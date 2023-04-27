@@ -1,6 +1,6 @@
 Name:           rrdd-plugins
 Version:        1.10.8
-Release:        5.1%{?dist}
+Release:        5.2%{?dist}
 Summary:        RRDD metrics plugins
 License:        LGPL+linking exception
 Group:          System/Hypervisor
@@ -82,6 +82,9 @@ rm -rf %{buildroot}
 %{_unitdir}/xcp-rrdd-xenpm.service
 
 %changelog
+* Thu Apr 27 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 1.10.8-5.2
+- Rebuild for ocaml-rrdd-plugin-1.9.1-2.2.xcpng8.2
+
 * Wed Aug 17 2022 Gael Duperrey <gduperrey@vates.fr> - 1.10.8-5.1
 - Rebuild for updated xapi from XS82ECU1011
 
