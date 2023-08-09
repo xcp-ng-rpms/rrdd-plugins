@@ -1,19 +1,16 @@
+%global package_speccommit dba6ae429ecc8a131772d021a271f87f611aa82b
+%global package_srccommit v1.10.9
 Name:           rrdd-plugins
-Version:        1.10.8
-Release:        5%{?dist}
+Version: 1.10.9
+Release: 4%{?xsrel}%{?dist}
 Summary:        RRDD metrics plugins
-License:        LGPL+linking exception
+License:        LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception
 Group:          System/Hypervisor
 URL:            https://github.com/xenserver/rrdd-plugins/
-
-Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.10.8&format=tar.gz&prefix=rrdd-plugins-1.10.8#/rrdd-plugins-1.10.8.tar.gz
-Source1: SOURCES/rrdd-plugins/xcp-rrdd-iostat.service
-Source2: SOURCES/rrdd-plugins/xcp-rrdd-squeezed.service
-Source3: SOURCES/rrdd-plugins/xcp-rrdd-xenpm.service
-
-
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/rrdd-plugins/archive?at=v1.10.8&format=tar.gz&prefix=rrdd-plugins-1.10.8#/rrdd-plugins-1.10.8.tar.gz) = 082f0a031f7d299167ae0060a58f45694b826005
-
+Source0: rrdd-plugins-1.10.9.tar.gz
+Source1: xcp-rrdd-iostat.service
+Source2: xcp-rrdd-squeezed.service
+Source3: xcp-rrdd-xenpm.service
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 BuildRequires:  xs-opam-repo
 BuildRequires:  forkexecd-devel
@@ -22,8 +19,6 @@ BuildRequires:  ocaml-rrdd-plugin-devel
 BuildRequires:  ocaml-xen-api-libs-transitional-devel
 BuildRequires:  xen-ocaml-devel
 BuildRequires:  blktap-devel
-BuildRequires:  xen-dom0-libs-devel
-BuildRequires:  xen-libs-devel
 %{?systemd_requires}
 BuildRequires: systemd
 
@@ -82,6 +77,25 @@ rm -rf %{buildroot}
 %{_unitdir}/xcp-rrdd-xenpm.service
 
 %changelog
+* Thu Jul 20 2023 Rob Hoes <rob.hoes@citrix.com> - 1.10.9-4
+- Bump release and rebuild
+
+* Mon Jun 19 2023 Christian Lindig <christian.lindig@citrix.com> - 1.10.9-3
+- Bump release and rebuild
+
+* Thu Jun 08 2023 Christian Lindig <christian.lindig@citrix.com> - 1.10.9-2
+- Bump release and rebuild
+
+* Mon May 15 2023 Christian Lindig <christian.lindig@citrix.com> - 1.10.9-1
+- unchanged source code but top commit was not tagged
+
+* Fri May 12 2023 Christian Lindig <christian.lindig@citrix.com> - 1.10.8-7
+- Bump release and rebuild
+
+* Tue Feb 28 2023 Pau Ruiz Safont <pau.ruizsafont@cloud.com> - 1.10.8-6
+- Change license to match the one in the source repo
+- Fix xen BuildReqs
+
 * Mon Sep 27 2021 Pau Ruiz Safont <pau.safont@citrix.com> - 1.10.8-5
 - Bump package for libev dependency
 
