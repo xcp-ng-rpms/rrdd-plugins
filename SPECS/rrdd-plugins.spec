@@ -19,8 +19,6 @@ BuildRequires:  ocaml-rrdd-plugin-devel
 BuildRequires:  ocaml-xen-api-libs-transitional-devel
 BuildRequires:  xen-ocaml-devel
 BuildRequires:  blktap-devel
-BuildRequires:  xen-dom0-libs-devel
-BuildRequires:  xen-libs-devel
 %{?systemd_requires}
 BuildRequires: systemd
 
@@ -79,6 +77,9 @@ rm -rf %{buildroot}
 %{_unitdir}/xcp-rrdd-xenpm.service
 
 %changelog
+* next
+- Remove old xen BuildRequires wrongly retained in previous build
+
 * Wed Aug 09 2023 Gael Duperrey <gduperrey@vates.fr> - 1.10.9-4.1
 - Sync with hotfix XS82ECU1040
 - *** Upstream changelog ***
