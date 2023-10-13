@@ -1,8 +1,8 @@
-%global package_speccommit dba6ae429ecc8a131772d021a271f87f611aa82b
+%global package_speccommit 3b43341caf593f8e58bf84d6443a642f2f90a383
 %global package_srccommit v1.10.9
 Name:           rrdd-plugins
 Version: 1.10.9
-Release: 4.1%{?xsrel}%{?dist}
+Release: 5.1%{?xsrel}%{?dist}
 Summary:        RRDD metrics plugins
 License:        LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception
 Group:          System/Hypervisor
@@ -77,8 +77,13 @@ rm -rf %{buildroot}
 %{_unitdir}/xcp-rrdd-xenpm.service
 
 %changelog
-* next
+* Fri Oct 13 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 1.10.9-5.1
 - Remove old xen BuildRequires wrongly retained in previous build
+- Rebuild after sync with hotfix XS82ECU1049
+- No source changes: only rebuild for dependencies
+- *** Upstream changelog ***
+- * Mon Oct 02 2023 Pau Ruiz Safont <pau.ruizsafont@cloud.com> - 1.10.9-5
+- - Bump release and rebuild
 
 * Wed Aug 09 2023 Gael Duperrey <gduperrey@vates.fr> - 1.10.9-4.1
 - Sync with hotfix XS82ECU1040
