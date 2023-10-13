@@ -1,8 +1,8 @@
-%global package_speccommit dba6ae429ecc8a131772d021a271f87f611aa82b
+%global package_speccommit 3b43341caf593f8e58bf84d6443a642f2f90a383
 %global package_srccommit v1.10.9
 Name:           rrdd-plugins
 Version: 1.10.9
-Release: 4%{?xsrel}%{?dist}
+Release: 5%{?xsrel}%{?dist}
 Summary:        RRDD metrics plugins
 License:        LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception
 Group:          System/Hypervisor
@@ -77,6 +77,9 @@ rm -rf %{buildroot}
 %{_unitdir}/xcp-rrdd-xenpm.service
 
 %changelog
+* Mon Oct 02 2023 Pau Ruiz Safont <pau.ruizsafont@cloud.com> - 1.10.9-5
+- Bump release and rebuild
+
 * Thu Jul 20 2023 Rob Hoes <rob.hoes@citrix.com> - 1.10.9-4
 - Bump release and rebuild
 
