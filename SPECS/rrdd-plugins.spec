@@ -1,8 +1,8 @@
-%global package_speccommit 3b43341caf593f8e58bf84d6443a642f2f90a383
+%global package_speccommit 6110cb5b0d60c925f373476fde6a6b2589b4a15a
 %global package_srccommit v1.10.9
 Name:           rrdd-plugins
 Version: 1.10.9
-Release: 5%{?xsrel}%{?dist}
+Release: 12%{?xsrel}%{?dist}
 Summary:        RRDD metrics plugins
 License:        LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception
 Group:          System/Hypervisor
@@ -77,6 +77,27 @@ rm -rf %{buildroot}
 %{_unitdir}/xcp-rrdd-xenpm.service
 
 %changelog
+* Fri Mar 08 2024 Christian Lindig <christian.lindig@cloud.com> - 1.10.9-12
+- Bump release and rebuild
+
+* Wed Mar 06 2024 Christian Lindig <christian.lindig@cloud.com> - 1.10.9-11
+- Bump release and rebuild
+
+* Tue Mar 05 2024 Christian Lindig <christian.lindig@cloud.com> - 1.10.9-10
+- Bump release and rebuild
+
+* Fri Nov 03 2023 Christian Lindig <christian.lindig@cloud.com> - 1.10.9-9
+- Bump release and rebuild
+
+* Tue Oct 24 2023 Christian Lindig <christian.lindig@cloud.com> - 1.10.9-8
+- Bump release and rebuild
+
+* Tue Oct 24 2023 Christian Lindig <christian.lindig@cloud.com> - 1.10.9-7
+- Bump release and rebuild
+
+* Wed Oct 18 2023 Christian Lindig <christian.lindig@cloud.com> - 1.10.9-6
+- Bump release and rebuild
+
 * Mon Oct 02 2023 Pau Ruiz Safont <pau.ruizsafont@cloud.com> - 1.10.9-5
 - Bump release and rebuild
 
