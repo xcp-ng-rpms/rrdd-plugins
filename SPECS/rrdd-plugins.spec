@@ -1,8 +1,8 @@
-%global package_speccommit b6cdbe02554298d684dc7a117927dd899da2411a
+%global package_speccommit 04e03fe91d07d9c7f18842ba7cac90689258cd37
 %global package_srccommit v1.10.9
 Name:           rrdd-plugins
 Version: 1.10.9
-Release: 14.1%{?xsrel}%{?dist}
+Release: 17.1%{?xsrel}%{?dist}
 Summary:        RRDD metrics plugins
 License:        LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception
 Group:          System/Hypervisor
@@ -77,6 +77,17 @@ rm -rf %{buildroot}
 %{_unitdir}/xcp-rrdd-xenpm.service
 
 %changelog
+* Thu Jan 16 2025 Gael Duperrey <gduperrey@vates.tech> - 1.10.9-17.1
+- Rebuild after sync with hotfix XS82ECU1080
+- No source changes: only rebuild for dependencies
+- *** Upstream changelog ***
+- * Fri Dec 13 2024 Christian Lindig <christian.lindig@cloud.com> - 1.10.9-17
+- - Bump release and rebuild
+- * Thu Dec 12 2024 Christian Lindig <christian.lindig@cloud.com> - 1.10.9-16
+- - Bump release and rebuild
+- * Mon Dec 09 2024 Christian Lindig <christian.lindig@cloud.com> - 1.10.9-15
+- - Bump release and rebuild
+
 * Thu Oct 24 2024 Gael Duperrey <gduperrey@vates.tech> - 1.10.9-14.1
 - Rebuild after sync with hotfix XS82ECU1074
 - No source changes: only rebuild for dependencies
